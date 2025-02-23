@@ -1,0 +1,151 @@
+# templates/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness & Fitness</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#home">Wellness & Fitness</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#nutrition">Nutrition</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section with Video Background -->
+    <section id="home" class="hero">
+        <video autoplay muted loop id="myVideo">
+            <source src="{{ url_for('static', filename='videos/background.mp4') }}" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Transform Your Life Through Wellness</h1>
+            <p>Your journey to a healthier lifestyle starts here</p>
+            <a href="#programs" class="cta-button">Explore Programs</a>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="section">
+        <h2>Our Programs</h2>
+        <div class="programs-grid">
+            <div class="program-card">
+                <img src="{{ url_for('static', filename='images/trainercouple.png') }}" alt="Personal Training">
+                <h3>Personal Training</h3>
+                <p>One-on-one training sessions tailored to your specific goals and fitness level.</p>
+                <ul>
+                    <li>Customized workout plans</li>
+                    <li>Progress tracking</li>
+                    <li>Expert guidance</li>
+                </ul>
+            </div>
+            <div class="program-card">
+                <img src="{{ url_for('static', filename='images/familyfitness.png') }}" alt="Group Classes">
+                <h3>Group Classes</h3>
+                <p>Energetic group sessions that combine cardio, strength, and flexibility training.</p>
+                <ul>
+                    <li>HIIT workouts</li>
+                    <li>Yoga sessions</li>
+                    <li>Community support</li>
+                </ul>
+            </div>
+            <div class="program-card">
+                <img src="{{ url_for('static', filename='images/vitualblacktrainer.png') }}" alt="Online Coaching">
+                <h3>Online Coaching</h3>
+                <p>Virtual training programs for those who prefer to workout from home.</p>
+                <ul>
+                    <li>Video tutorials</li>
+                    <li>Remote support</li>
+                    <li>Flexible scheduling</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutrition Section -->
+    <section id="nutrition" class="section">
+        <h2>Nutrition Guidance</h2>
+        <div class="nutrition-content">
+            <div class="nutrition-text">
+                <h3>Personalized Meal Plans</h3>
+                <p>Our nutrition experts will create customized meal plans based on your:</p>
+                <ul>
+                    <li>Dietary preferences and restrictions</li>
+                    <li>Fitness goals</li>
+                    <li>Lifestyle and schedule</li>
+                </ul>
+                <h3>Nutritional Education</h3>
+                <p>Learn about:</p>
+                <ul>
+                    <li>Macro and micronutrients</li>
+                    <li>Portion control</li>
+                    <li>Meal timing and preparation</li>
+                </ul>
+            </div>
+            <div class="nutrition-image">
+                <img src="{{ url_for('static', filename='images/healthyfamily.png') }}" alt="Healthy Meal">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="{{ url_for('static', filename='images/blackcontactfamily.png') }}" alt="Our Team">
+            </div>
+            <div class="about-text">
+                <h3>Our Mission</h3>
+                <p>We are dedicated to helping individuals achieve their fitness goals through comprehensive wellness programs and personalized attention.</p>
+                <h3>Our Team</h3>
+                <p>Our certified trainers and nutritionists bring years of experience and expertise to help you succeed in your fitness journey.</p>
+                <h3>Our Approach</h3>
+                <p>We believe in a holistic approach to wellness that combines physical training, proper nutrition, and mental well-being.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p>Email: info@wellnessandfitness.com</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Address: 123 Fitness Street, Wellness City, WC 12345</p>
+            </div>
+            <div class="contact-form">
+                <h3>Send us a Message</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Wellness & Fitness. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

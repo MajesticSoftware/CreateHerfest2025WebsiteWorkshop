@@ -1,0 +1,259 @@
+/* Earthy Theme Variables */
+:root {
+    --primary-color: #4A6B5F;      /* Deep sage green */
+    --secondary-color: #A68A64;    /* Warm clay brown */
+    --accent-color: #C45C3D;       /* Terracotta orange */
+    --background-color: #F5F1E6;    /* Warm off-white */
+    --text-color: #3E3E3E;         /* Dark gray for text */
+    --card-shadow: 0 4px 20px rgba(74, 107, 95, 0.1);
+    --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Base Styles */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: rgba(245, 241, 230, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    text-shadow: var(--text-shadow);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    opacity: 0.9;
+}
+
+/* Programs Section */
+#programs {
+    padding: 8rem 5%;
+}
+
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.program-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(74, 107, 95, 0.1);
+}
+
+.program-card h3 {
+    margin: 1.5rem 0 1rem;
+    color: var(--secondary-color);
+}
+
+.program-card ul {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.program-card li {
+    margin: 0.5rem 0;
+}
+
+/* Section Headers */
+.section h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+/* Content Sections */
+.nutrition-content,
+.about-content,
+.contact-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 4rem;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Images */
+.nutrition-image img,
+.about-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+}
+
+/* Contact Form */
+.contact-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(74, 107, 95, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(74, 107, 95, 0.2);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Buttons */
+.cta-button {
+    display: inline-block;
+    padding: 1.2rem 2.8rem;
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 1rem 0;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background: #B34C32;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(196, 92, 61, 0.3);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 5%;
+    background: var(--primary-color);
+    color: white;
+    margin-top: 6rem;
+}
+
+/* Section Styling */
+.section {
+    padding: 6rem 5%;
+    background: 
+        linear-gradient(
+            rgba(245, 241, 230, 0.9),
+            rgba(245, 241, 230, 0.9)
+        ),
+        url('{{ url_for("static", filename="images/texture.png") }}');
+    background-size: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .nutrition-content,
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+        gap: 2rem;
+    }
+
+    .programs-grid {
+        grid-template-columns: 1fr;
+    }
+}
